@@ -1,3 +1,11 @@
+import Image from "next/image";
+
+const stepImages = [
+  { src: "/images/producer-harvest.jpg", alt: "コーヒーの収穫作業" },
+  { src: "/images/roasting.jpg", alt: "コーヒー豆の焙煎" },
+  { src: "/images/cherry-sorting.jpg", alt: "コーヒーチェリーの選別" },
+];
+
 const steps = [
   {
     number: "01",
@@ -96,10 +104,20 @@ export default function HowToOrderSection() {
                 <div className="hidden md:block absolute top-12 left-[60%] w-[80%] h-px bg-gradient-to-r from-brand-gold/20 to-brand-gold/5" />
               )}
 
-              {/* Step icon */}
-              <div className="relative inline-flex items-center justify-center w-24 h-24 rounded-xl bg-brand-green text-brand-gold/70 mb-8">
-                {step.icon}
-                <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-brand-gold text-brand-green-dark text-[10px] font-medium flex items-center justify-center tracking-wider">
+              {/* Step image */}
+              <div className="relative w-32 h-32 mx-auto rounded-xl overflow-hidden mb-8">
+                <Image
+                  src={stepImages[index].src}
+                  alt={stepImages[index].alt}
+                  fill
+                  className="object-cover"
+                  sizes="128px"
+                />
+                <div className="absolute inset-0 bg-brand-green/30" />
+                <div className="absolute inset-0 flex items-center justify-center text-brand-gold/80">
+                  {step.icon}
+                </div>
+                <span className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-brand-gold text-brand-green-dark text-[10px] font-medium flex items-center justify-center tracking-wider">
                   {step.number}
                 </span>
               </div>
