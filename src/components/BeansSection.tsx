@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/lib/products";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 function TasteChart({
   label,
@@ -33,7 +34,7 @@ export default function BeansSection() {
     <section id="beans" className="py-28 sm:py-36 bg-brand-green relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
-        <div className="text-center mb-20">
+        <AnimateOnScroll className="text-center mb-20">
           <p className="section-label text-brand-gold/60 mb-4">Our Beans</p>
           <div className="w-8 h-px bg-brand-gold/30 mx-auto mb-6" />
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90">
@@ -43,13 +44,17 @@ export default function BeansSection() {
             コロンビアの異なる産地から届く、個性豊かなスペシャルティコーヒー。
             それぞれの土地が育んだ味わいをお楽しみください。
           </p>
-        </div>
+        </AnimateOnScroll>
 
         {/* Beans grid */}
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {products.map((product) => (
-            <div
+          {products.map((product, index) => (
+            <AnimateOnScroll
               key={product.id}
+              delay={(index + 1) as 1 | 2 | 3}
+              animation="scale"
+            >
+            <div
               className="group bg-brand-green-light/20 border border-brand-cream/6 rounded-xl overflow-hidden hover:border-brand-gold/20"
             >
               {/* Product image */}
@@ -127,6 +132,7 @@ export default function BeansSection() {
                 </div>
               </div>
             </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>

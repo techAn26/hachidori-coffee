@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import AnimateOnScroll from "./AnimateOnScroll";
 
 const faqs = [
   {
@@ -85,13 +86,13 @@ export default function FAQSection() {
     <section id="faq" className="py-28 sm:py-36 bg-brand-green relative">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
-        <div className="text-center mb-20">
+        <AnimateOnScroll className="text-center mb-20">
           <p className="section-label text-brand-gold/60 mb-4">FAQ</p>
           <div className="w-8 h-px bg-brand-gold/30 mx-auto mb-6" />
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90">
             よくあるご質問
           </h2>
-        </div>
+        </AnimateOnScroll>
 
         {/* FAQ list */}
         <div className="border-t border-brand-cream/8">

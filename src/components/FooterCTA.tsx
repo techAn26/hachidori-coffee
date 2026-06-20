@@ -1,5 +1,7 @@
 "use client";
 
+import AnimateOnScroll from "./AnimateOnScroll";
+
 export default function FooterCTA() {
   return (
     <section className="py-28 sm:py-36 bg-brand-cream relative overflow-hidden">
@@ -14,7 +16,7 @@ export default function FooterCTA() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+      <AnimateOnScroll className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
         <p className="section-label text-brand-gold mb-4">Reserve Now</p>
         <div className="w-8 h-px bg-brand-gold/40 mx-auto mb-6" />
         <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-green mb-8">
@@ -55,7 +57,7 @@ export default function FooterCTA() {
             </button>
           </form>
         </div>
-      </div>
+      </AnimateOnScroll>
     </section>
   );
 }

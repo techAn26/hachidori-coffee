@@ -1,23 +1,25 @@
+import AnimateOnScroll from "./AnimateOnScroll";
+
 const reviews = [
   {
     name: "T.K.",
     title: "コーヒー歴15年",
     rating: 5,
-    text: "ウィラ スプレモの甘みに驚きました。スーパーで買っていた豆とは別次元の味わいです。予約制というのも、届くまでの楽しみがあっていいですね。",
+    text: "ウィラ スプレモの甘みに驚きました。スーパーで買っていた豆とは別次元の味わいです。",
     product: "ウィラ スプレモ",
   },
   {
     name: "M.S.",
     title: "自家焙煎愛好家",
     rating: 5,
-    text: "シエラネバダのコクと甘みのバランスが絶妙。エスプレッソで淹れると、チョコレートのような余韻が長く続きます。リピート確定です。",
+    text: "シエラネバダのコクと甘みのバランスが絶妙。チョコレートのような余韻が長く続きます。",
     product: "シエラネバダ",
   },
   {
     name: "A.Y.",
     title: "カフェオーナー",
     rating: 5,
-    text: "ナリーニョ エスペシャルの華やかな香りは、お客様にも大好評。直輸入ならではの鮮度の良さを実感しています。産地のストーリーも素晴らしい。",
+    text: "ナリーニョの華やかな香りは、お客様にも大好評。直輸入ならではの鮮度を実感しています。",
     product: "ナリーニョ エスペシャル",
   },
 ];
@@ -43,40 +45,36 @@ export default function ReviewsSection() {
   return (
     <section className="py-28 sm:py-36 bg-brand-cream relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section heading */}
-        <div className="text-center mb-20">
+        <AnimateOnScroll className="text-center mb-20">
           <p className="section-label text-brand-gold mb-4">Reviews</p>
           <div className="w-8 h-px bg-brand-gold/40 mx-auto mb-6" />
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-green">
             お客様の声
           </h2>
-        </div>
+        </AnimateOnScroll>
 
-        {/* Reviews grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {reviews.map((review) => (
-            <div
-              key={review.name}
-              className="p-8 rounded-xl bg-white/80 border border-brand-green/4"
-            >
-              <StarRating rating={review.rating} />
-              <p className="mt-5 text-brand-brown/55 leading-loose text-sm font-light">
-                &ldquo;{review.text}&rdquo;
-              </p>
-              <div className="mt-6 pt-5 border-t border-brand-green/5">
-                <p className="text-sm text-brand-green tracking-wider">
-                  {review.name}
+          {reviews.map((review, index) => (
+            <AnimateOnScroll key={review.name} delay={(index + 1) as 1 | 2 | 3}>
+              <div className="p-8 rounded-xl bg-white/80 border border-brand-green/4">
+                <StarRating rating={review.rating} />
+                <p className="mt-5 text-brand-brown/55 leading-loose text-sm font-light">
+                  &ldquo;{review.text}&rdquo;
                 </p>
-                <p className="text-[10px] text-brand-brown/35 mt-1 tracking-wider">
-                  {review.title} &mdash; {review.product}
-                </p>
+                <div className="mt-6 pt-5 border-t border-brand-green/5">
+                  <p className="text-sm text-brand-green tracking-wider">
+                    {review.name}
+                  </p>
+                  <p className="text-[10px] text-brand-brown/35 mt-1 tracking-wider">
+                    {review.title} &mdash; {review.product}
+                  </p>
+                </div>
               </div>
-            </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>
 
-      {/* Bottom divider */}
       <div className="absolute bottom-0 left-0 right-0 section-divider" />
     </section>
   );
