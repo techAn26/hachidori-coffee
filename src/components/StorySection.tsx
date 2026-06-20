@@ -102,7 +102,7 @@ export default function StorySection() {
         </div>
       </div>
 
-      <div className="mt-20 sm:mt-28 section-divider" />
+      <div className="mt-10 sm:mt-14 section-divider" />
     </section>
   );
 }

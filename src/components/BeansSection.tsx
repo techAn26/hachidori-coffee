@@ -31,7 +31,7 @@ function TasteChart({
 
 export default function BeansSection() {
   return (
-    <section id="beans" className="py-28 sm:py-36 bg-brand-green relative">
+    <section id="beans" className="pt-16 sm:pt-20 pb-28 sm:pb-36 bg-brand-green relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
         <AnimateOnScroll className="text-center mb-20">
