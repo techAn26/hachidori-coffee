@@ -6,10 +6,10 @@ const steps = [
       "お好みの豆を選び、予約注文してください。決済は予約時に完了します。",
     icon: (
       <svg
-        className="w-8 h-8"
+        className="w-7 h-7"
         fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={1.5}
+        strokeWidth={1}
         stroke="currentColor"
       >
         <path
@@ -27,10 +27,10 @@ const steps = [
       "一定数の予約が集まった時点で焙煎を開始。少量ずつ丁寧に焙煎します。",
     icon: (
       <svg
-        className="w-8 h-8"
+        className="w-7 h-7"
         fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={1.5}
+        strokeWidth={1}
         stroke="currentColor"
       >
         <path
@@ -53,10 +53,10 @@ const steps = [
       "焙煎後48時間以内に発送。最高の鮮度でお手元にお届けします。",
     icon: (
       <svg
-        className="w-8 h-8"
+        className="w-7 h-7"
         fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={1.5}
+        strokeWidth={1}
         stroke="currentColor"
       >
         <path
@@ -71,17 +71,16 @@ const steps = [
 
 export default function HowToOrderSection() {
   return (
-    <section id="howto" className="py-24 sm:py-32 bg-brand-cream">
+    <section id="howto" className="py-28 sm:py-36 bg-brand-cream relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
-        <div className="text-center mb-16">
-          <p className="text-sm tracking-[0.2em] uppercase text-brand-gold mb-3">
-            How to Order
-          </p>
+        <div className="text-center mb-20">
+          <p className="section-label text-brand-gold mb-4">How to Order</p>
+          <div className="w-8 h-px bg-brand-gold/40 mx-auto mb-6" />
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-green">
             ご予約の流れ
           </h2>
-          <p className="mt-4 text-brand-brown/60 max-w-2xl mx-auto">
+          <p className="mt-6 text-brand-brown/45 max-w-2xl mx-auto leading-relaxed font-light">
             予約制だからこそ実現できる、焙煎したての鮮度。
             <br className="hidden sm:block" />
             大量生産では叶わない、一杯一杯への丁寧なこだわり。
@@ -89,26 +88,26 @@ export default function HowToOrderSection() {
         </div>
 
         {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-16">
           {steps.map((step, index) => (
             <div key={step.number} className="relative text-center">
               {/* Connector line (desktop) */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-[60%] w-[80%] h-px bg-gradient-to-r from-brand-gold/30 to-brand-gold/10" />
+                <div className="hidden md:block absolute top-12 left-[60%] w-[80%] h-px bg-gradient-to-r from-brand-gold/20 to-brand-gold/5" />
               )}
 
               {/* Step icon */}
-              <div className="relative inline-flex items-center justify-center w-24 h-24 rounded-full bg-brand-green text-brand-gold mb-6">
+              <div className="relative inline-flex items-center justify-center w-24 h-24 rounded-xl bg-brand-green text-brand-gold/70 mb-8">
                 {step.icon}
-                <span className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-brand-gold text-brand-green-dark text-xs font-bold flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-brand-gold text-brand-green-dark text-[10px] font-medium flex items-center justify-center tracking-wider">
                   {step.number}
                 </span>
               </div>
 
-              <h3 className="font-serif text-xl text-brand-green mb-3">
+              <h3 className="font-serif text-lg text-brand-green mb-3 tracking-wide">
                 {step.title}
               </h3>
-              <p className="text-brand-brown/60 leading-relaxed max-w-xs mx-auto">
+              <p className="text-brand-brown/45 leading-relaxed max-w-xs mx-auto text-sm font-light">
                 {step.description}
               </p>
             </div>
@@ -116,7 +115,7 @@ export default function HowToOrderSection() {
         </div>
 
         {/* Benefits */}
-        <div className="mt-20 grid sm:grid-cols-3 gap-6">
+        <div className="mt-24 grid sm:grid-cols-3 gap-5">
           {[
             {
               title: "鮮度最優先",
@@ -134,18 +133,21 @@ export default function HowToOrderSection() {
           ].map((benefit) => (
             <div
               key={benefit.title}
-              className="p-6 rounded-xl bg-brand-green/5 border border-brand-green/10"
+              className="p-7 rounded-xl bg-brand-green/3 border border-brand-green/6"
             >
-              <h4 className="font-serif text-lg text-brand-green mb-2">
+              <h4 className="font-serif text-base text-brand-green mb-2 tracking-wide">
                 {benefit.title}
               </h4>
-              <p className="text-sm text-brand-brown/60">
+              <p className="text-xs text-brand-brown/45 leading-relaxed font-light">
                 {benefit.description}
               </p>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Bottom divider */}
+      <div className="absolute bottom-0 left-0 right-0 section-divider" />
     </section>
   );
 }

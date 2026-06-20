@@ -45,19 +45,21 @@ function FAQItem({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-brand-green/10">
+    <div className="border-b border-brand-cream/8">
       <button
         type="button"
-        className="w-full flex items-center justify-between py-5 text-left"
+        className="w-full flex items-center justify-between py-6 text-left"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
-        <span className="font-medium text-brand-green pr-4">{question}</span>
+        <span className="text-sm text-brand-cream/70 pr-4 tracking-wide font-light">
+          {question}
+        </span>
         <svg
-          className={`w-5 h-5 text-brand-gold shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-brand-gold/50 shrink-0 transition-transform duration-400 ${isOpen ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth={2}
+          strokeWidth={1.5}
           stroke="currentColor"
         >
           <path
@@ -68,8 +70,8 @@ function FAQItem({
         </svg>
       </button>
       {isOpen && (
-        <div className="pb-5">
-          <p className="text-brand-brown/60 leading-relaxed text-sm">
+        <div className="pb-6">
+          <p className="text-brand-cream/40 leading-loose text-sm font-light">
             {answer}
           </p>
         </div>
@@ -80,20 +82,19 @@ function FAQItem({
 
 export default function FAQSection() {
   return (
-    <section id="faq" className="py-24 sm:py-32 bg-brand-green">
+    <section id="faq" className="py-28 sm:py-36 bg-brand-green relative">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
-        <div className="text-center mb-16">
-          <p className="text-sm tracking-[0.2em] uppercase text-brand-gold/80 mb-3">
-            FAQ
-          </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream">
+        <div className="text-center mb-20">
+          <p className="section-label text-brand-gold/60 mb-4">FAQ</p>
+          <div className="w-8 h-px bg-brand-gold/30 mx-auto mb-6" />
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90">
             よくあるご質問
           </h2>
         </div>
 
         {/* FAQ list */}
-        <div className="divide-y divide-brand-cream/10 border-t border-brand-cream/10 [&_span]:text-brand-cream [&_p]:text-brand-cream/60">
+        <div className="border-t border-brand-cream/8">
           {faqs.map((faq) => (
             <FAQItem
               key={faq.question}
@@ -103,6 +104,9 @@ export default function FAQSection() {
           ))}
         </div>
       </div>
+
+      {/* Bottom divider */}
+      <div className="absolute bottom-0 left-0 right-0 section-divider" />
     </section>
   );
 }

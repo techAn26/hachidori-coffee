@@ -2,18 +2,18 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-green-dark py-12">
+    <footer className="bg-brand-green-dark py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link
               href="/"
-              className="font-serif text-lg tracking-wider text-brand-cream"
+              className="font-serif text-lg tracking-[0.15em] text-brand-cream/80"
             >
               HACHIDORI COFFEE
             </Link>
-            <p className="mt-3 text-sm text-brand-cream/40 leading-relaxed">
+            <p className="mt-4 text-xs text-brand-cream/25 leading-loose font-light">
               コロンビアの農園から直輸入。
               <br />
               厳選されたスペシャルティコーヒーを、
@@ -24,10 +24,10 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-sm font-medium text-brand-cream/60 mb-4">
-              ナビゲーション
+            <h3 className="text-[10px] tracking-[0.2em] uppercase text-brand-cream/35 mb-5">
+              Navigation
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {[
                 { label: "ストーリー", href: "#story" },
                 { label: "コーヒー豆", href: "#beans" },
@@ -37,7 +37,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-brand-cream/40 hover:text-brand-gold transition-colors"
+                    className="text-xs text-brand-cream/25 hover:text-brand-gold font-light"
                   >
                     {link.label}
                   </a>
@@ -48,10 +48,10 @@ export default function Footer() {
 
           {/* Shop */}
           <div>
-            <h3 className="text-sm font-medium text-brand-cream/60 mb-4">
-              ショップ
+            <h3 className="text-[10px] tracking-[0.2em] uppercase text-brand-cream/35 mb-5">
+              Shop
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {[
                 { label: "商品一覧", href: "/shop" },
                 { label: "カート", href: "/cart" },
@@ -59,7 +59,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-brand-cream/40 hover:text-brand-gold transition-colors"
+                    className="text-xs text-brand-cream/25 hover:text-brand-gold font-light"
                   >
                     {link.label}
                   </Link>
@@ -70,17 +70,17 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="text-sm font-medium text-brand-cream/60 mb-4">
-              ご利用について
+            <h3 className="text-[10px] tracking-[0.2em] uppercase text-brand-cream/35 mb-5">
+              Legal
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {[
                 "特定商取引法に基づく表記",
                 "プライバシーポリシー",
                 "利用規約",
               ].map((label) => (
                 <li key={label}>
-                  <span className="text-sm text-brand-cream/40 cursor-pointer hover:text-brand-gold transition-colors">
+                  <span className="text-xs text-brand-cream/25 cursor-pointer hover:text-brand-gold font-light">
                     {label}
                   </span>
                 </li>
@@ -90,8 +90,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-brand-cream/5 text-center">
-          <p className="text-xs text-brand-cream/30">
+        <div className="mt-16 pt-8 border-t border-brand-cream/5 text-center">
+          <p className="text-[10px] text-brand-cream/15 tracking-[0.15em]">
             &copy; 2026 HACHIDORI COFFEE. All rights reserved.
           </p>
         </div>

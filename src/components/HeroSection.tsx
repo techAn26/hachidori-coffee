@@ -1,35 +1,38 @@
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-brand-green overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Subtle background texture */}
+      <div className="absolute inset-0">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(201, 168, 76, 0.3) 0%, transparent 50%),
-                              radial-gradient(circle at 75% 75%, rgba(201, 168, 76, 0.2) 0%, transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at 20% 30%, rgba(184, 150, 74, 0.08) 0%, transparent 60%),
+                              radial-gradient(circle at 80% 70%, rgba(184, 150, 74, 0.05) 0%, transparent 60%)`,
           }}
         />
       </div>
 
-      {/* Decorative gold line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-gold/50 to-transparent" />
+      {/* Top gold line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-gold/20 to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
         {/* Sub heading */}
-        <p className="mb-6 text-sm tracking-[0.3em] uppercase text-brand-gold/80">
+        <p className="section-label mb-8 text-brand-gold/70">
           Colombia Direct Import &mdash; Specialty Coffee
         </p>
 
+        {/* Decorative line */}
+        <div className="w-12 h-px bg-brand-gold/40 mx-auto mb-10" />
+
         {/* Main heading */}
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-brand-cream mb-8">
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-brand-cream/90 mb-8 tracking-[0.02em]">
           コロンビアの農園から、
           <br />
           <span className="text-brand-gold">あなたのカップへ。</span>
         </h1>
 
         {/* Description */}
-        <p className="mx-auto max-w-2xl text-base sm:text-lg text-brand-cream/70 leading-relaxed mb-12">
+        <p className="mx-auto max-w-2xl text-base sm:text-lg text-brand-cream/50 leading-loose mb-14 font-light">
           中間業者を介さず、コロンビアの農園から直接届く
           <br className="hidden sm:block" />
           スペシャルティコーヒー。
@@ -38,32 +41,34 @@ export default function HeroSection() {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
           <a
             href="/shop"
-            className="inline-flex items-center rounded-full bg-brand-gold px-8 py-3.5 text-base font-medium text-brand-green-dark hover:bg-brand-gold-light transition-colors"
+            className="inline-flex items-center rounded-lg bg-brand-gold px-10 py-3.5 text-sm tracking-[0.1em] uppercase font-medium text-brand-green-dark hover:bg-brand-gold-light"
           >
-            予約する
+            Reserve
           </a>
           <a
             href="#beans"
-            className="inline-flex items-center rounded-full border border-brand-cream/30 px-8 py-3.5 text-base text-brand-cream hover:border-brand-gold hover:text-brand-gold transition-colors"
+            className="inline-flex items-center rounded-lg border border-brand-cream/20 px-10 py-3.5 text-sm tracking-[0.1em] uppercase text-brand-cream/70 hover:border-brand-gold/50 hover:text-brand-gold"
           >
-            豆を見る
+            Our Beans
           </a>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div className="flex flex-col items-center gap-2 text-brand-cream/40">
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <div className="h-8 w-px bg-gradient-to-b from-brand-cream/40 to-transparent" />
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+        <div className="flex flex-col items-center gap-3 text-brand-cream/25">
+          <span className="text-[10px] tracking-[0.3em] uppercase">
+            Scroll
+          </span>
+          <div className="h-10 w-px bg-gradient-to-b from-brand-cream/25 to-transparent" />
         </div>
       </div>
 
-      {/* Bottom gold line */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent" />
+      {/* Bottom divider */}
+      <div className="absolute bottom-0 left-0 right-0 section-divider" />
     </section>
   );
 }

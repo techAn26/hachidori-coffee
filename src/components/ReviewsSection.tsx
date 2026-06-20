@@ -24,11 +24,11 @@ const reviews = [
 
 function StarRating({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-0.5">
+    <div className="flex gap-1">
       {[1, 2, 3, 4, 5].map((star) => (
         <svg
           key={star}
-          className={`w-4 h-4 ${star <= rating ? "text-brand-gold" : "text-brand-green/20"}`}
+          className={`w-3.5 h-3.5 ${star <= rating ? "text-brand-gold" : "text-brand-green/10"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -41,34 +41,33 @@ function StarRating({ rating }: { rating: number }) {
 
 export default function ReviewsSection() {
   return (
-    <section className="py-24 sm:py-32 bg-brand-cream">
+    <section className="py-28 sm:py-36 bg-brand-cream relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
-        <div className="text-center mb-16">
-          <p className="text-sm tracking-[0.2em] uppercase text-brand-gold mb-3">
-            Reviews
-          </p>
+        <div className="text-center mb-20">
+          <p className="section-label text-brand-gold mb-4">Reviews</p>
+          <div className="w-8 h-px bg-brand-gold/40 mx-auto mb-6" />
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-green">
             お客様の声
           </h2>
         </div>
 
         {/* Reviews grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {reviews.map((review) => (
             <div
               key={review.name}
-              className="p-8 rounded-2xl bg-white border border-brand-green/5 shadow-sm"
+              className="p-8 rounded-xl bg-white/80 border border-brand-green/4"
             >
               <StarRating rating={review.rating} />
-              <p className="mt-4 text-brand-brown/70 leading-relaxed text-sm">
+              <p className="mt-5 text-brand-brown/55 leading-loose text-sm font-light">
                 &ldquo;{review.text}&rdquo;
               </p>
-              <div className="mt-6 pt-4 border-t border-brand-green/5">
-                <p className="font-medium text-brand-green text-sm">
+              <div className="mt-6 pt-5 border-t border-brand-green/5">
+                <p className="text-sm text-brand-green tracking-wider">
                   {review.name}
                 </p>
-                <p className="text-xs text-brand-brown/50 mt-0.5">
+                <p className="text-[10px] text-brand-brown/35 mt-1 tracking-wider">
                   {review.title} &mdash; {review.product}
                 </p>
               </div>
@@ -76,6 +75,9 @@ export default function ReviewsSection() {
           ))}
         </div>
       </div>
+
+      {/* Bottom divider */}
+      <div className="absolute bottom-0 left-0 right-0 section-divider" />
     </section>
   );
 }
