@@ -1,122 +1,139 @@
 import Image from "next/image";
 import AnimateOnScroll from "./AnimateOnScroll";
 
-const storySteps = [
-  {
-    image: "/images/farm-field.jpg",
-    alt: "コロンビアの高地コーヒー農園",
-    title: "標高1,700mの農園から",
-    text: "寒暖差の大きい高地と火山性土壌が、複雑な風味を育てます。",
-    reverse: false,
-  },
-  {
-    image: "/images/coffee-cherries.jpg",
-    alt: "完熟コーヒーチェリー",
-    title: "完熟チェリーだけを手摘みで",
-    text: "一粒ずつ人の手で選別。機械では実現できない品質がここにあります。",
-    reverse: true,
-  },
-  {
-    image: "/images/producer-processing.jpg",
-    alt: "コーヒー生産者の精製作業",
-    title: "顔が見える、直接取引",
-    text: "中間業者ゼロ。農園から届く最短ルートが、鮮度と適正価格を実現します。",
-    reverse: false,
-  },
-];
-
 export default function StorySection() {
   return (
     <section id="story">
-      {/* ─── Block 1: KPI Impact ─── */}
-      <div className="relative h-[60vh] min-h-[450px] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/beans-closeup.webp"
-          alt="焙煎されたコーヒー豆"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-brand-green/75" />
-
-        <div className="relative z-10 mx-auto max-w-5xl px-4 text-center">
-          <AnimateOnScroll>
-            <p className="section-label text-brand-gold/60 mb-6">Our Story</p>
-            <div className="w-8 h-px bg-brand-gold/30 mx-auto mb-10" />
+      {/* ─── Part 1: Editorial heading + KPI ─── */}
+      <div className="bg-brand-green py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimateOnScroll className="max-w-3xl">
+            <p className="section-label text-brand-gold/50 mb-6">Our Story</p>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90 leading-snug">
+              コロンビアの高地から、
+              <br />
+              一切の妥協なく。
+            </h2>
+            <p className="mt-6 text-brand-cream/35 font-light leading-relaxed max-w-xl">
+              標高1,700m。火山性土壌。手摘み。直接取引。
+              <br className="hidden sm:block" />
+              すべての工程が、この一杯のためにあります。
+            </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-3 gap-8 max-w-md mx-auto">
-            <AnimateOnScroll delay={1}>
-              <p className="font-serif text-4xl sm:text-5xl text-brand-gold">
-                100<span className="text-2xl">%</span>
+          {/* KPI row */}
+          <AnimateOnScroll className="mt-16 flex items-center gap-12 sm:gap-16">
+            <div>
+              <p className="font-serif text-3xl sm:text-4xl text-brand-gold">
+                100<span className="text-xl">%</span>
               </p>
-              <div className="w-6 h-px bg-brand-gold/30 mx-auto my-3" />
-              <p className="text-[10px] text-brand-cream/40 tracking-[0.2em] uppercase">
-                Colombia
+              <p className="text-[10px] text-brand-cream/30 tracking-[0.2em] uppercase mt-2">
+                Colombian
               </p>
-            </AnimateOnScroll>
-            <AnimateOnScroll delay={2}>
-              <p className="font-serif text-4xl sm:text-5xl text-brand-gold">
-                48<span className="text-2xl">h</span>
+            </div>
+            <div className="w-px h-10 bg-brand-cream/10" />
+            <div>
+              <p className="font-serif text-3xl sm:text-4xl text-brand-gold">
+                48<span className="text-xl">h</span>
               </p>
-              <div className="w-6 h-px bg-brand-gold/30 mx-auto my-3" />
-              <p className="text-[10px] text-brand-cream/40 tracking-[0.2em] uppercase">
+              <p className="text-[10px] text-brand-cream/30 tracking-[0.2em] uppercase mt-2">
                 Freshness
               </p>
-            </AnimateOnScroll>
-            <AnimateOnScroll delay={3}>
-              <p className="font-serif text-4xl sm:text-5xl text-brand-gold">
+            </div>
+            <div className="w-px h-10 bg-brand-cream/10" />
+            <div>
+              <p className="font-serif text-3xl sm:text-4xl text-brand-gold">
                 Direct
               </p>
-              <div className="w-6 h-px bg-brand-gold/30 mx-auto my-3" />
-              <p className="text-[10px] text-brand-cream/40 tracking-[0.2em] uppercase">
+              <p className="text-[10px] text-brand-cream/30 tracking-[0.2em] uppercase mt-2">
                 Trade
               </p>
-            </AnimateOnScroll>
-          </div>
+            </div>
+          </AnimateOnScroll>
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 section-divider" />
       </div>
 
-      {/* ─── Block 2: Alternating story ─── */}
+      {/* ─── Part 2: Photo mosaic ─── */}
       <div className="bg-brand-green">
-        {storySteps.map((step, i) => (
-          <div key={i} className="relative">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid md:grid-cols-2 gap-10 lg:gap-20 items-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24 sm:pb-32">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4">
+            {/* Large photo — left 7 cols */}
+            <AnimateOnScroll
+              animation="slide-left"
+              className="md:col-span-7 relative aspect-[3/4] sm:aspect-[4/5] rounded-lg overflow-hidden group"
+            >
+              <Image
+                src="/images/farm-field.jpg"
+                alt="コロンビアの高地コーヒー農園"
+                fill
+                className="object-cover group-hover:scale-[1.02] transition-transform duration-1000"
+                sizes="(max-width: 768px) 100vw, 60vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-green/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <p className="text-[10px] text-brand-gold/60 tracking-[0.2em] uppercase mb-2">
+                  Altitude 1,700m
+                </p>
+                <p className="font-serif text-xl sm:text-2xl text-brand-cream/90">
+                  Manzanares, Caldas
+                </p>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Right column — 5 cols, 2 stacked photos */}
+            <div className="md:col-span-5 grid grid-cols-2 md:grid-cols-1 gap-3 sm:gap-4">
               <AnimateOnScroll
-                animation={step.reverse ? "slide-right" : "slide-left"}
-                className={step.reverse ? "md:order-2" : ""}
+                animation="slide-right"
+                delay={1}
+                className="relative aspect-square sm:aspect-[5/4] rounded-lg overflow-hidden group"
               >
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                  <Image
-                    src={step.image}
-                    alt={step.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+                <Image
+                  src="/images/coffee-cherries.jpg"
+                  alt="完熟コーヒーチェリー"
+                  fill
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-1000"
+                  sizes="(max-width: 768px) 50vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-green/50 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                  <p className="text-[10px] text-brand-gold/60 tracking-[0.2em] uppercase mb-1">
+                    Hand Picked
+                  </p>
+                  <p className="font-serif text-sm sm:text-lg text-brand-cream/80">
+                    完熟チェリーだけを手摘み
+                  </p>
                 </div>
               </AnimateOnScroll>
 
               <AnimateOnScroll
-                animation={step.reverse ? "slide-left" : "slide-right"}
-                className={step.reverse ? "md:order-1" : ""}
+                animation="slide-right"
+                delay={2}
+                className="relative aspect-square sm:aspect-[5/4] rounded-lg overflow-hidden group"
               >
-                <h3 className="font-serif text-2xl sm:text-3xl text-brand-cream/90 tracking-wide leading-snug mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-brand-cream/40 leading-relaxed font-light">
-                  {step.text}
-                </p>
+                <Image
+                  src="/images/producer-processing.jpg"
+                  alt="コーヒー生産者"
+                  fill
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-1000"
+                  sizes="(max-width: 768px) 50vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-green/50 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                  <p className="text-[10px] text-brand-gold/60 tracking-[0.2em] uppercase mb-1">
+                    Direct Trade
+                  </p>
+                  <p className="font-serif text-sm sm:text-lg text-brand-cream/80">
+                    農園から直接、あなたへ
+                  </p>
+                </div>
               </AnimateOnScroll>
             </div>
-            <div className="section-divider" />
           </div>
-        ))}
+        </div>
+        <div className="section-divider" />
       </div>
 
-      {/* ─── Block 3: Quote ─── */}
+      {/* ─── Part 3: Quote ─── */}
       <div className="relative py-24 sm:py-32 overflow-hidden">
         <Image
           src="/images/finca-la-pastorita.jpg"
@@ -128,21 +145,18 @@ export default function StorySection() {
         <div className="absolute inset-0 bg-brand-green/80" />
 
         <AnimateOnScroll className="relative z-10 mx-auto max-w-3xl px-4 text-center">
-          <div className="w-8 h-px bg-brand-gold/40 mx-auto mb-10" />
           <blockquote className="font-serif text-2xl sm:text-3xl lg:text-4xl text-brand-cream/80 leading-relaxed italic">
             &ldquo;一杯のコーヒーが、
             <br />
-            産地と消費者をつなぎ、
-            <br />
             小さくても確かな変化を生み出す&rdquo;
           </blockquote>
-          <p className="mt-8 text-brand-gold/60 text-sm tracking-[0.15em]">
-            &mdash; ハチドリのひとしずく
-          </p>
-          <p className="mt-2 text-brand-cream/20 text-xs tracking-wider font-light">
-            Finca &ldquo;La Pastorita&rdquo; &mdash; Manzanares, Caldas
-          </p>
-          <div className="w-8 h-px bg-brand-gold/40 mx-auto mt-10" />
+          <div className="mt-8 flex items-center justify-center gap-4">
+            <div className="w-8 h-px bg-brand-gold/30" />
+            <p className="text-brand-gold/50 text-xs tracking-[0.2em] uppercase">
+              Hachidori no Hitoshizuku
+            </p>
+            <div className="w-8 h-px bg-brand-gold/30" />
+          </div>
         </AnimateOnScroll>
 
         <div className="absolute bottom-0 left-0 right-0 section-divider" />
