@@ -87,7 +87,7 @@ export default function FAQSection() {
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
         <AnimateOnScroll className="text-center mb-20">
-          <p className="section-label text-brand-gold/60 mb-4">FAQ</p>
+          <p className="section-label text-brand-gold/50 mb-4">FAQ</p>
           <div className="w-8 h-px bg-brand-gold/30 mx-auto mb-6" />
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90">
             よくあるご質問

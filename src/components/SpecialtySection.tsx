@@ -3,7 +3,7 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 export default function SpecialtySection() {
   return (
-    <section className="py-28 sm:py-36 bg-brand-green relative overflow-hidden">
+    <section className="pt-20 sm:pt-28 pb-28 sm:pb-36 bg-brand-green relative overflow-hidden">
       <Image
         src="/images/beans-closeup.webp"
         alt="焙煎されたコーヒー豆"
@@ -15,10 +15,10 @@ export default function SpecialtySection() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
           <AnimateOnScroll animation="slide-left" className="space-y-8">
             <div>
-              <p className="section-label text-brand-gold/60 mb-4">
+              <p className="section-label text-brand-gold/50 mb-4">
                 Specialty Coffee
               </p>
-              <div className="w-8 h-px bg-brand-gold/30 md:mx-0 mb-6" />
+              <div className="w-8 h-px bg-brand-gold/30 mx-auto md:mx-0 mb-6" />
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90">
                 スペシャルティコーヒーとは
               </h2>

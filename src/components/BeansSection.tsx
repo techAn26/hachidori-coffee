@@ -31,11 +31,11 @@ function TasteChart({
 
 export default function BeansSection() {
   return (
-    <section id="beans" className="pt-16 sm:pt-20 pb-28 sm:pb-36 bg-brand-green relative">
+    <section id="beans" className="pt-20 sm:pt-28 pb-28 sm:pb-36 bg-brand-green relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
         <AnimateOnScroll className="text-center mb-20">
-          <p className="section-label text-brand-gold/60 mb-4">Our Beans</p>
+          <p className="section-label text-brand-gold/50 mb-4">Our Beans</p>
           <div className="w-8 h-px bg-brand-gold/30 mx-auto mb-6" />
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90">
             厳選された3つの豆

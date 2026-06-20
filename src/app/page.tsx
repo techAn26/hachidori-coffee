@@ -18,8 +18,8 @@ export default function Home() {
         <StorySection />
         <SpecialtySection />
         <BeansSection />
-        <HowToOrderSection />
         <ReviewsSection />
+        <HowToOrderSection />
         <FAQSection />
         <FooterCTA />
       </main>

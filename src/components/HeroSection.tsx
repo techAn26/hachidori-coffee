@@ -24,7 +24,7 @@ export default function HeroSection() {
       />
 
       {/* Content — bottom-left aligned */}
-      <div className="relative z-10 mx-auto max-w-7xl w-full px-6 sm:px-8 lg:px-12 pb-24 sm:pb-32">
+      <div className="relative z-10 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 pb-24 sm:pb-32">
         <div className="max-w-2xl">
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.15] text-brand-cream/95 mb-10 tracking-[0.02em]">
             コロンビアの農園から、

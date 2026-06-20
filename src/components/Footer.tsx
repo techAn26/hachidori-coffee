@@ -55,6 +55,7 @@ export default function Footer() {
               {[
                 { label: "商品一覧", href: "/shop" },
                 { label: "カート", href: "/cart" },
+                { label: "ログイン", href: "/login" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

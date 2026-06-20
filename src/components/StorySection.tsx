@@ -9,7 +9,7 @@ export default function StorySection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end mb-10 sm:mb-14">
           <AnimateOnScroll animation="slide-left">
             <p className="section-label text-brand-gold/50 mb-5">Our Story</p>
-            <h2 className="font-serif text-3xl sm:text-4xl xl:text-5xl text-brand-cream/90 leading-snug">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90 leading-snug">
               コロンビアの高地から、
               <br />
               一切の妥協なく。

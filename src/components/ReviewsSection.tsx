@@ -46,8 +46,8 @@ export default function ReviewsSection() {
     <section className="py-28 sm:py-36 bg-brand-cream relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-20">
-          <p className="section-label text-brand-gold mb-4">Reviews</p>
-          <div className="w-8 h-px bg-brand-gold/40 mx-auto mb-6" />
+          <p className="section-label text-brand-gold/50 mb-4">Reviews</p>
+          <div className="w-8 h-px bg-brand-gold/30 mx-auto mb-6" />
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-green">
             お客様の声
           </h2>
