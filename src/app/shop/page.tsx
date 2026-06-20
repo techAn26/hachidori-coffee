@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { products } from "@/lib/products";
@@ -11,13 +12,15 @@ export const metadata = {
 function TasteBar({ label, value }: { label: string; value: number }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="text-xs text-brand-brown/50 w-8 shrink-0">{label}</span>
+      <span className="text-[10px] text-brand-brown/40 w-8 shrink-0 tracking-wider">
+        {label}
+      </span>
       <div className="flex-1 flex gap-0.5">
         {[1, 2, 3, 4, 5].map((level) => (
           <div
             key={level}
             className={`h-1 flex-1 rounded-full ${
-              level <= value ? "bg-brand-gold" : "bg-brand-green/10"
+              level <= value ? "bg-brand-gold" : "bg-brand-green/8"
             }`}
           />
         ))}
@@ -30,64 +33,52 @@ export default function ShopPage() {
   return (
     <>
       <Header />
-      <main className="pt-16">
+      <main className="pt-20">
         {/* Hero */}
-        <div className="bg-brand-green py-16 sm:py-20">
+        <div className="bg-brand-green py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-sm tracking-[0.2em] uppercase text-brand-gold/80 mb-3">
+            <p className="section-label text-brand-gold/60 mb-4">
               Online Shop
             </p>
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream">
+            <div className="w-8 h-px bg-brand-gold/30 mx-auto mb-6" />
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90">
               コーヒー豆一覧
             </h1>
-            <p className="mt-4 text-brand-cream/60">
+            <p className="mt-6 text-brand-cream/40 font-light">
               すべての豆は予約制です。予約が集まり次第、焙煎してお届けします。
             </p>
           </div>
         </div>
 
         {/* Product grid */}
-        <div className="bg-brand-cream py-16 sm:py-20">
+        <div className="bg-brand-cream py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {products.map((product) => (
                 <Link
                   key={product.id}
                   href={`/shop/${product.id}`}
-                  className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-brand-green/5"
+                  className="group block bg-white rounded-xl overflow-hidden border border-brand-green/4 hover:border-brand-gold/20"
                 >
-                  {/* Image placeholder */}
-                  <div className="aspect-[4/3] bg-brand-green/5 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-2 rounded-full bg-brand-green/10 flex items-center justify-center">
-                        <svg
-                          className="w-8 h-8 text-brand-green/20"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1}
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.41a2.25 2.25 0 013.182 0l2.909 2.91M3.75 21h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v13.5A1.5 1.5 0 003.75 21z"
-                          />
-                        </svg>
-                      </div>
-                      <p className="text-xs text-brand-green/20">
-                        {product.nameEn}
-                      </p>
-                    </div>
+                  {/* Product image */}
+                  <div className="aspect-[3/4] relative overflow-hidden bg-gradient-to-b from-brand-green-dark/60 to-brand-green/80">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-contain p-6 drop-shadow-2xl group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                   </div>
 
                   {/* Content */}
                   <div className="p-6">
                     <div className="flex items-start justify-between">
                       <div>
-                        <h2 className="font-serif text-xl text-brand-green group-hover:text-brand-gold transition-colors">
+                        <h2 className="font-serif text-lg text-brand-green group-hover:text-brand-gold">
                           {product.name}
                         </h2>
-                        <p className="text-xs text-brand-brown/40 mt-0.5">
+                        <p className="text-[10px] text-brand-brown/30 mt-0.5 tracking-wider">
                           {product.nameEn}
                         </p>
                       </div>
@@ -96,7 +87,7 @@ export default function ShopPage() {
                       </span>
                     </div>
 
-                    <p className="mt-3 text-sm text-brand-brown/50">
+                    <p className="mt-3 text-xs text-brand-brown/40 font-light">
                       {product.region}
                     </p>
 
@@ -105,7 +96,7 @@ export default function ShopPage() {
                       {product.flavorNotes.map((note) => (
                         <span
                           key={note}
-                          className="text-xs px-2 py-0.5 rounded-full bg-brand-green/5 text-brand-green/60"
+                          className="text-[10px] px-2 py-0.5 rounded border border-brand-green/8 text-brand-green/50 tracking-wider"
                         >
                           {note}
                         </span>
@@ -124,7 +115,7 @@ export default function ShopPage() {
                     </div>
 
                     {/* Meta */}
-                    <div className="mt-4 flex items-center justify-between text-xs text-brand-brown/40">
+                    <div className="mt-4 flex items-center justify-between text-[10px] text-brand-brown/30 tracking-wider">
                       <span>
                         {product.roast} / {product.process}
                       </span>
