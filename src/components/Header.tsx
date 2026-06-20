@@ -65,8 +65,10 @@ export default function Header() {
   const [cartCount, setCartCount] = useState(0);
   const pathname = usePathname();
   const isLP = pathname === "/";
+  const isEC = !isLP;
 
   useEffect(() => {
+    if (!isEC) return;
     const updateCount = () => {
       try {
         const cart = JSON.parse(
@@ -89,7 +91,7 @@ export default function Header() {
       window.removeEventListener("storage", updateCount);
       clearInterval(interval);
     };
-  }, []);
+  }, [isEC]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-brand-green/95 backdrop-blur-md border-b border-brand-gold/10">
@@ -109,39 +111,37 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Center: LP section links (desktop, LP only) */}
-          {isLP && (
-            <nav className="hidden lg:flex items-center gap-8">
-              <a href="#story" className={navLinkClass}>
-                Story
-              </a>
-              <a href="#beans" className={navLinkClass}>
-                Beans
-              </a>
-              <a href="#howto" className={navLinkClass}>
-                Order
-              </a>
-              <a href="#faq" className={navLinkClass}>
-                FAQ
-              </a>
-            </nav>
-          )}
+          {/* Right: all nav + actions */}
+          <div className="flex items-center gap-5 sm:gap-7">
+            {/* LP nav links */}
+            {isLP && (
+              <>
+                <nav className="hidden lg:flex items-center gap-7">
+                  <a href="#story" className={navLinkClass}>Story</a>
+                  <a href="#beans" className={navLinkClass}>Beans</a>
+                  <a href="#howto" className={navLinkClass}>Order</a>
+                  <a href="#faq" className={navLinkClass}>FAQ</a>
+                </nav>
+                <Link
+                  href="/shop"
+                  className="hidden sm:inline-flex items-center rounded-lg border border-brand-gold/50 px-5 py-1.5 text-xs tracking-[0.12em] uppercase text-brand-gold hover:bg-brand-gold hover:text-brand-green-dark"
+                >
+                  Shop
+                </Link>
+              </>
+            )}
 
-          {/* Right: Shop + User + Cart + Mobile menu */}
-          <div className="flex items-center gap-4 sm:gap-5">
-            {/* Shop link (desktop) */}
-            <Link
-              href="/shop"
-              className="hidden sm:inline-flex items-center rounded-lg border border-brand-gold/50 px-5 py-1.5 text-xs tracking-[0.12em] uppercase text-brand-gold hover:bg-brand-gold hover:text-brand-green-dark"
-            >
-              Shop
-            </Link>
-
-            {/* User icon */}
-            <UserIcon />
-
-            {/* Cart icon */}
-            <CartIcon count={cartCount} />
+            {/* EC nav links + icons */}
+            {isEC && (
+              <>
+                <nav className="hidden md:flex items-center gap-7">
+                  <Link href="/" className={navLinkClass}>Top</Link>
+                  <Link href="/shop" className={navLinkClass}>Shop</Link>
+                </nav>
+                <UserIcon />
+                <CartIcon count={cartCount} />
+              </>
+            )}
 
             {/* Mobile menu button */}
             <button
@@ -180,61 +180,37 @@ export default function Header() {
       {isMenuOpen && (
         <nav className="lg:hidden border-t border-brand-gold/10 bg-brand-green/98 backdrop-blur-md">
           <div className="px-6 py-5 space-y-4">
-            {/* EC links */}
-            <Link
-              href="/shop"
-              className="block text-xs tracking-[0.15em] uppercase text-brand-gold font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Shop — 商品一覧
-            </Link>
-            <Link
-              href="/cart"
-              className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Cart — カート{cartCount > 0 && ` (${cartCount})`}
-            </Link>
-            <Link
-              href="/login"
-              className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Login — ログイン
-            </Link>
-
-            {/* Divider + LP links */}
             {isLP && (
               <>
+                <Link
+                  href="/shop"
+                  className="block text-xs tracking-[0.15em] uppercase text-brand-gold font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Shop — 商品一覧
+                </Link>
                 <div className="border-t border-brand-cream/5" />
-                <a
-                  href="#story"
-                  className="block text-xs tracking-[0.15em] uppercase text-brand-cream/40 hover:text-brand-gold"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Story
-                </a>
-                <a
-                  href="#beans"
-                  className="block text-xs tracking-[0.15em] uppercase text-brand-cream/40 hover:text-brand-gold"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Beans
-                </a>
-                <a
-                  href="#howto"
-                  className="block text-xs tracking-[0.15em] uppercase text-brand-cream/40 hover:text-brand-gold"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Order
-                </a>
-                <a
-                  href="#faq"
-                  className="block text-xs tracking-[0.15em] uppercase text-brand-cream/40 hover:text-brand-gold"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  FAQ
-                </a>
+                <a href="#story" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/40 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>Story</a>
+                <a href="#beans" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/40 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>Beans</a>
+                <a href="#howto" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/40 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>Order</a>
+                <a href="#faq" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/40 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>FAQ</a>
+              </>
+            )}
+
+            {isEC && (
+              <>
+                <Link href="/" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>
+                  Top — トップページ
+                </Link>
+                <Link href="/shop" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>
+                  Shop — 商品一覧
+                </Link>
+                <Link href="/cart" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>
+                  Cart — カート{cartCount > 0 && ` (${cartCount})`}
+                </Link>
+                <Link href="/login" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>
+                  Login — ログイン
+                </Link>
               </>
             )}
           </div>
