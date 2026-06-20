@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products } from "@/lib/products";
 
 function TasteChart({
@@ -51,28 +52,16 @@ export default function BeansSection() {
               key={product.id}
               className="group bg-brand-green-light/20 border border-brand-cream/6 rounded-xl overflow-hidden hover:border-brand-gold/20"
             >
-              {/* Image placeholder */}
-              <div className="aspect-square bg-brand-green-dark/40 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-brand-cream/4 flex items-center justify-center">
-                    <svg
-                      className="w-10 h-10 text-brand-cream/10"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={0.75}
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.41a2.25 2.25 0 013.182 0l2.909 2.91M3.75 21h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v13.5A1.5 1.5 0 003.75 21z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-[10px] text-brand-cream/15 tracking-wider">
-                    {product.nameEn}
-                  </p>
-                </div>
+              {/* Product image */}
+              <div className="aspect-square relative overflow-hidden">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-brand-green-dark/20" />
               </div>
 
               {/* Content */}
