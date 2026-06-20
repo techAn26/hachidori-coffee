@@ -5,9 +5,36 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
+function UserIcon() {
+  return (
+    <Link
+      href="/login"
+      className="text-brand-cream/50 hover:text-brand-gold"
+      aria-label="ログイン / アカウント"
+    >
+      <svg
+        className="w-5 h-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.2}
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+        />
+      </svg>
+    </Link>
+  );
+}
+
 function CartIcon({ count }: { count: number }) {
   return (
-    <Link href="/cart" className="relative text-brand-cream/60 hover:text-brand-gold">
+    <Link
+      href="/cart"
+      className="relative text-brand-cream/50 hover:text-brand-gold"
+    >
       <svg
         className="w-5 h-5"
         fill="none"
@@ -85,15 +112,23 @@ export default function Header() {
           {/* Center: LP section links (desktop, LP only) */}
           {isLP && (
             <nav className="hidden lg:flex items-center gap-8">
-              <a href="#story" className={navLinkClass}>Story</a>
-              <a href="#beans" className={navLinkClass}>Beans</a>
-              <a href="#howto" className={navLinkClass}>Order</a>
-              <a href="#faq" className={navLinkClass}>FAQ</a>
+              <a href="#story" className={navLinkClass}>
+                Story
+              </a>
+              <a href="#beans" className={navLinkClass}>
+                Beans
+              </a>
+              <a href="#howto" className={navLinkClass}>
+                Order
+              </a>
+              <a href="#faq" className={navLinkClass}>
+                FAQ
+              </a>
             </nav>
           )}
 
-          {/* Right: EC links + Cart + Mobile menu */}
-          <div className="flex items-center gap-4 sm:gap-6">
+          {/* Right: Shop + User + Cart + Mobile menu */}
+          <div className="flex items-center gap-4 sm:gap-5">
             {/* Shop link (desktop) */}
             <Link
               href="/shop"
@@ -102,7 +137,10 @@ export default function Header() {
               Shop
             </Link>
 
-            {/* Cart icon (always visible) */}
+            {/* User icon */}
+            <UserIcon />
+
+            {/* Cart icon */}
             <CartIcon count={cartCount} />
 
             {/* Mobile menu button */}
@@ -142,7 +180,7 @@ export default function Header() {
       {isMenuOpen && (
         <nav className="lg:hidden border-t border-brand-gold/10 bg-brand-green/98 backdrop-blur-md">
           <div className="px-6 py-5 space-y-4">
-            {/* EC links first (priority) */}
+            {/* EC links */}
             <Link
               href="/shop"
               className="block text-xs tracking-[0.15em] uppercase text-brand-gold font-medium"
@@ -157,13 +195,18 @@ export default function Header() {
             >
               Cart — カート{cartCount > 0 && ` (${cartCount})`}
             </Link>
+            <Link
+              href="/login"
+              className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Login — ログイン
+            </Link>
 
-            {/* Divider */}
-            {isLP && <div className="border-t border-brand-cream/5" />}
-
-            {/* LP section links (LP only) */}
+            {/* Divider + LP links */}
             {isLP && (
               <>
+                <div className="border-t border-brand-cream/5" />
                 <a
                   href="#story"
                   className="block text-xs tracking-[0.15em] uppercase text-brand-cream/40 hover:text-brand-gold"
