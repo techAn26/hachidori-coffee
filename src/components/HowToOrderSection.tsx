@@ -24,7 +24,7 @@ const steps = [
 
 export default function HowToOrderSection() {
   return (
-    <section id="howto" className="py-28 sm:py-36 bg-brand-cream relative">
+    <section id="howto" className="py-28 sm:py-36 bg-brand-cream-dark relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
         <AnimateOnScroll className="text-center mb-20">

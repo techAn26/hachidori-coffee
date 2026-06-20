@@ -58,7 +58,7 @@ export default function BeansSection() {
               className="group bg-brand-green-light/20 border border-brand-cream/6 rounded-xl overflow-hidden hover:border-brand-gold/20"
             >
               {/* Product image */}
-              <div className="aspect-[3/4] relative overflow-hidden bg-gradient-to-b from-brand-green-dark/60 to-brand-green/80 flex items-center justify-center p-8">
+              <div className="aspect-square relative overflow-hidden bg-gradient-to-b from-brand-green-dark/60 to-brand-green/80 flex items-center justify-center">
                 <Image
                   src={product.image}
                   alt={product.name}

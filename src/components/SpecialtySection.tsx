@@ -12,20 +12,24 @@ export default function SpecialtySection() {
         sizes="100vw"
       />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-          <AnimateOnScroll animation="slide-left" className="space-y-8">
-            <div>
-              <p className="section-label text-brand-gold/50 mb-4">
-                Specialty Coffee
-              </p>
-              <div className="w-8 h-px bg-brand-gold/30 mx-auto md:mx-0 mb-6" />
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90">
-                スペシャルティコーヒーとは
-              </h2>
-            </div>
+        {/* Heading — centered */}
+        <AnimateOnScroll className="text-center mb-16 sm:mb-20">
+          <p className="section-label text-brand-gold/50 mb-4">
+            Specialty Coffee
+          </p>
+          <div className="w-8 h-px bg-brand-gold/30 mx-auto mb-6" />
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90">
+            スペシャルティコーヒーとは
+          </h2>
+          <p className="mt-6 text-brand-cream/40 max-w-xl mx-auto leading-relaxed font-light">
+            SCA基準で80点以上の評価を受けた、世界の生産量のわずか5%に満たない希少なコーヒー。
+          </p>
+        </AnimateOnScroll>
 
-            <p className="text-brand-cream/50 leading-loose font-light">
-              SCA基準で80点以上の評価を受けた、世界の生産量のわずか5%に満たない希少なコーヒー。HACHIDORI COFFEEの豆はすべてカッピングスコア82点以上です。
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <AnimateOnScroll animation="slide-left" className="space-y-6">
+            <p className="text-brand-cream/45 leading-loose font-light text-sm">
+              HACHIDORI COFFEEの豆はすべてカッピングスコア82点以上。産地の気候・土壌・標高が生み出すテロワールを、焙煎で最大限に引き出しています。
             </p>
 
             <ul className="space-y-3">

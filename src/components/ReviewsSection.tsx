@@ -43,7 +43,7 @@ function StarRating({ rating }: { rating: number }) {
 
 export default function ReviewsSection() {
   return (
-    <section className="py-28 sm:py-36 bg-brand-cream relative">
+    <section className="py-28 sm:py-36 bg-brand-cream-dark relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-20">
           <p className="section-label text-brand-gold/50 mb-4">Reviews</p>

@@ -5,22 +5,24 @@ export default function StorySection() {
   return (
     <section id="story" className="bg-brand-green py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* ─── Text + KPI ─── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end mb-10 sm:mb-14">
-          <AnimateOnScroll animation="slide-left">
-            <p className="section-label text-brand-gold/50 mb-5">Our Story</p>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90 leading-snug">
-              コロンビアの高地から、
-              <br />
-              一切の妥協なく。
-            </h2>
-          </AnimateOnScroll>
+        {/* ─── Heading ─── */}
+        <AnimateOnScroll className="text-center mb-14 sm:mb-16">
+          <p className="section-label text-brand-gold/50 mb-4">Our Story</p>
+          <div className="w-8 h-px bg-brand-gold/30 mx-auto mb-6" />
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-brand-cream/90 leading-snug">
+            コロンビアの高地から、
+            <br />
+            一切の妥協なく。
+          </h2>
+          <p className="mt-6 text-brand-cream/30 font-light leading-relaxed text-sm max-w-lg mx-auto">
+            標高1,700m。火山性土壌。手摘み。直接取引。
+            すべての工程が、この一杯のためにあります。
+          </p>
+        </AnimateOnScroll>
 
-          <AnimateOnScroll animation="slide-right">
-            <p className="text-brand-cream/30 font-light leading-relaxed text-sm mb-8">
-              標高1,700m。火山性土壌。手摘み。直接取引。
-              すべての工程が、この一杯のためにあります。
-            </p>
+        {/* ─── KPI ─── */}
+        <AnimateOnScroll className="mb-10 sm:mb-14">
+          <div className="flex items-center justify-center gap-8 sm:gap-12">
             <div className="flex items-center gap-8 sm:gap-10">
               <div>
                 <p className="font-serif text-2xl text-brand-gold">
@@ -47,8 +49,8 @@ export default function StorySection() {
                 </p>
               </div>
             </div>
-          </AnimateOnScroll>
-        </div>
+          </div>
+        </AnimateOnScroll>
 
         {/* ─── Photo strip: 3 photos in one row ─── */}
         <div className="grid grid-cols-12 gap-2 sm:gap-3">
