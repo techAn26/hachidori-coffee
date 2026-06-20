@@ -16,9 +16,9 @@ export default function Home() {
       <main>
         <HeroSection />
         <StorySection />
+        <SpecialtySection />
         <BeansSection />
         <HowToOrderSection />
-        <SpecialtySection />
         <ReviewsSection />
         <FAQSection />
         <FooterCTA />
