@@ -134,10 +134,9 @@ export default function Header() {
             {/* EC: nav + icons */}
             {isEC && (
               <>
-                <nav className="hidden sm:flex items-center gap-6">
-                  <Link href="/" className={navLinkClass}>Top</Link>
-                  <Link href="/shop" className={navLinkClass}>Shop</Link>
-                </nav>
+                <Link href="/shop" className={`hidden sm:block ${navLinkClass}`}>
+                  Shop
+                </Link>
                 <UserIcon />
                 <CartIcon count={cartCount} />
               </>
@@ -199,9 +198,6 @@ export default function Header() {
 
             {isEC && (
               <>
-                <Link href="/" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>
-                  Top — トップページ
-                </Link>
                 <Link href="/shop" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>
                   Shop — 商品一覧
                 </Link>
