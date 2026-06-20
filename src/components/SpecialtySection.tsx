@@ -1,7 +1,17 @@
+import Image from "next/image";
+
 export default function SpecialtySection() {
   return (
-    <section className="py-28 sm:py-36 bg-brand-green relative">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="py-28 sm:py-36 bg-brand-green relative overflow-hidden">
+      {/* Background image */}
+      <Image
+        src="/images/beans-closeup.webp"
+        alt="焙煎されたコーヒー豆"
+        fill
+        className="object-cover opacity-15"
+        sizes="100vw"
+      />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Content */}
           <div className="space-y-8">

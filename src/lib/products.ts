@@ -43,7 +43,7 @@ export const products: Product[] = [
     },
     price: 2400,
     weight: "200g",
-    image: "/images/coffee-cherries.jpg",
+    image: "/images/product-huila.webp",
   },
   {
     id: "sierra-nevada",
@@ -66,7 +66,7 @@ export const products: Product[] = [
     },
     price: 2800,
     weight: "200g",
-    image: "/images/producer-carry.jpg",
+    image: "/images/product-sierra.webp",
   },
   {
     id: "narino-especial",
@@ -89,6 +89,6 @@ export const products: Product[] = [
     },
     price: 3200,
     weight: "200g",
-    image: "/images/finca-la-pastorita.jpg",
+    image: "/images/product-narino.webp",
   },
 ];

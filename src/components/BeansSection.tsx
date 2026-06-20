@@ -53,15 +53,14 @@ export default function BeansSection() {
               className="group bg-brand-green-light/20 border border-brand-cream/6 rounded-xl overflow-hidden hover:border-brand-gold/20"
             >
               {/* Product image */}
-              <div className="aspect-square relative overflow-hidden">
+              <div className="aspect-[3/4] relative overflow-hidden bg-gradient-to-b from-brand-green-dark/60 to-brand-green/80 flex items-center justify-center p-8">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-contain p-6 drop-shadow-2xl group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-brand-green-dark/20" />
               </div>
 
               {/* Content */}

@@ -60,7 +60,7 @@ export default function HeroSection() {
             href="/shop"
             className="inline-flex items-center rounded-lg bg-brand-gold px-10 py-3.5 text-sm tracking-[0.1em] uppercase font-medium text-brand-green-dark hover:bg-brand-gold-light"
           >
-            Reserve
+            Shop
           </a>
           <a
             href="#beans"

@@ -55,7 +55,7 @@ export default function Header() {
               href="/shop"
               className="rounded-lg border border-brand-gold/60 bg-transparent px-6 py-2 text-xs tracking-[0.1em] uppercase text-brand-gold hover:bg-brand-gold hover:text-brand-green-dark"
             >
-              Reserve
+              Shop
             </Link>
           </nav>
 
@@ -128,7 +128,7 @@ export default function Header() {
               className="block w-full text-center rounded-lg border border-brand-gold/60 px-6 py-2.5 text-xs tracking-[0.1em] uppercase text-brand-gold"
               onClick={() => setIsMenuOpen(false)}
             >
-              Reserve
+              Shop
             </Link>
           </div>
         </nav>
