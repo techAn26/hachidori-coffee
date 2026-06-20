@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function StorySection() {
   return (
     <section id="story" className="py-28 sm:py-36 bg-brand-cream relative">
@@ -12,28 +14,15 @@ export default function StorySection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-          {/* Image placeholder */}
-          <div className="aspect-[4/3] rounded-xl bg-brand-green/5 border border-brand-green/8 flex items-center justify-center overflow-hidden">
-            <div className="text-center p-8">
-              <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-brand-green/8 flex items-center justify-center">
-                <svg
-                  className="w-12 h-12 text-brand-green/20"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={0.75}
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.41a2.25 2.25 0 013.182 0l2.909 2.91M3.75 21h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v13.5A1.5 1.5 0 003.75 21z"
-                  />
-                </svg>
-              </div>
-              <p className="text-xs text-brand-green/25 tracking-wider">
-                農園の写真
-              </p>
-            </div>
+          {/* Farm image */}
+          <div className="aspect-[4/3] rounded-xl overflow-hidden relative">
+            <Image
+              src="/images/farm-field.jpg"
+              alt="コロンビアのコーヒー農園"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
 
           {/* Story content */}
