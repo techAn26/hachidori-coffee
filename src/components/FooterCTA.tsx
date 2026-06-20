@@ -1,3 +1,5 @@
+"use client";
+
 export default function FooterCTA() {
   return (
     <section className="py-24 sm:py-32 bg-brand-cream relative overflow-hidden">
