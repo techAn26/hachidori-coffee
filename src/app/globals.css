@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Colors */
-  --color-brand-green: #1a3a2a;
-  --color-brand-green-light: #2d5a3f;
-  --color-brand-green-dark: #0f2419;
-  --color-brand-gold: #c9a84c;
-  --color-brand-gold-light: #dfc06e;
-  --color-brand-gold-dark: #a8872e;
-  --color-brand-cream: #faf6ef;
-  --color-brand-cream-dark: #f0e8d8;
-  --color-brand-brown: #3e2a1a;
-  --color-brand-brown-light: #5c3d26;
+  /* Colors — Refined Luxury Palette */
+  --color-brand-green: #0d1f17;
+  --color-brand-green-light: #162b22;
+  --color-brand-green-dark: #060f0b;
+  --color-brand-gold: #b8964a;
+  --color-brand-gold-light: #cead6e;
+  --color-brand-gold-dark: #8a6f35;
+  --color-brand-cream: #f5f0e8;
+  --color-brand-cream-dark: #e8e0d4;
+  --color-brand-brown: #2c1e12;
+  --color-brand-brown-light: #4a3425;
 
   /* Fonts */
   --font-serif: var(--font-playfair);
@@ -22,10 +22,12 @@ body {
   background-color: var(--color-brand-cream);
   color: var(--color-brand-brown);
   font-family: var(--font-sans), sans-serif;
+  font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif), serif;
+  letter-spacing: 0.05em;
 }
 
 /* Smooth scrolling */
@@ -37,4 +39,29 @@ html {
 ::selection {
   background-color: var(--color-brand-gold);
   color: var(--color-brand-green-dark);
+}
+
+/* Refined transitions */
+a, button {
+  transition: all 0.4s ease;
+}
+
+/* Gold section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-brand-gold) 20%,
+    var(--color-brand-gold) 80%,
+    transparent
+  );
+  opacity: 0.3;
+}
+
+/* Subtle section label style */
+.section-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
