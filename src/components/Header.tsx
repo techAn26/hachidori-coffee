@@ -131,13 +131,12 @@ export default function Header() {
               </>
             )}
 
-            {/* EC nav links + icons */}
+            {/* EC: Top link + icons */}
             {isEC && (
               <>
-                <nav className="hidden md:flex items-center gap-7">
-                  <Link href="/" className={navLinkClass}>Top</Link>
-                  <Link href="/shop" className={navLinkClass}>Shop</Link>
-                </nav>
+                <Link href="/" className={`hidden sm:block ${navLinkClass}`}>
+                  Top
+                </Link>
                 <UserIcon />
                 <CartIcon count={cartCount} />
               </>
@@ -201,9 +200,6 @@ export default function Header() {
               <>
                 <Link href="/" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>
                   Top — トップページ
-                </Link>
-                <Link href="/shop" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>
-                  Shop — 商品一覧
                 </Link>
                 <Link href="/cart" className="block text-xs tracking-[0.15em] uppercase text-brand-cream/60 hover:text-brand-gold" onClick={() => setIsMenuOpen(false)}>
                   Cart — カート{cartCount > 0 && ` (${cartCount})`}
