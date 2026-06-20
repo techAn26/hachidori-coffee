@@ -40,9 +40,9 @@ export default function HeroSection() {
 
         {/* Main heading */}
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-brand-cream/90 mb-8 tracking-[0.02em]">
-          コロンビアの農園から、
+          コロンビアの農園から届く、
           <br />
-          <span className="text-brand-gold">あなたのカップへ。</span>
+          <span className="text-brand-gold">優雅なひと時をあなたの元へ。</span>
         </h1>
 
         {/* Description */}

@@ -3,130 +3,106 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 export default function StorySection() {
   return (
-    <section id="story" className="bg-brand-green py-24 sm:py-32">
+    <section id="story" className="bg-brand-green py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* ─── Main grid: Text + Large photo side by side ─── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-end">
-          {/* Left: Text + KPI (5 cols) */}
-          <AnimateOnScroll
-            animation="slide-left"
-            className="lg:col-span-5 flex flex-col justify-between lg:min-h-[500px] xl:min-h-[560px]"
-          >
-            <div>
-              <p className="section-label text-brand-gold/50 mb-6">
-                Our Story
-              </p>
-              <h2 className="font-serif text-3xl sm:text-4xl xl:text-5xl text-brand-cream/90 leading-snug">
-                コロンビアの高地から、
-                <br />
-                一切の妥協なく。
-              </h2>
-              <p className="mt-6 text-brand-cream/30 font-light leading-relaxed text-sm">
-                標高1,700m。火山性土壌。手摘み。直接取引。
-                <br />
-                すべての工程が、この一杯のためにあります。
-              </p>
-            </div>
+        {/* ─── Text + KPI ─── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end mb-10 sm:mb-14">
+          <AnimateOnScroll animation="slide-left">
+            <p className="section-label text-brand-gold/50 mb-5">Our Story</p>
+            <h2 className="font-serif text-3xl sm:text-4xl xl:text-5xl text-brand-cream/90 leading-snug">
+              コロンビアの高地から、
+              <br />
+              一切の妥協なく。
+            </h2>
+          </AnimateOnScroll>
 
-            {/* KPI */}
-            <div className="flex items-center gap-8 sm:gap-12 mt-12 lg:mt-0">
+          <AnimateOnScroll animation="slide-right">
+            <p className="text-brand-cream/30 font-light leading-relaxed text-sm mb-8">
+              標高1,700m。火山性土壌。手摘み。直接取引。
+              すべての工程が、この一杯のためにあります。
+            </p>
+            <div className="flex items-center gap-8 sm:gap-10">
               <div>
-                <p className="font-serif text-3xl text-brand-gold">
-                  100<span className="text-lg">%</span>
+                <p className="font-serif text-2xl text-brand-gold">
+                  100<span className="text-sm">%</span>
                 </p>
-                <p className="text-[10px] text-brand-cream/25 tracking-[0.2em] uppercase mt-1">
+                <p className="text-[10px] text-brand-cream/20 tracking-[0.2em] uppercase mt-1">
                   Colombian
                 </p>
               </div>
-              <div className="w-px h-8 bg-brand-cream/8" />
+              <div className="w-px h-7 bg-brand-cream/8" />
               <div>
-                <p className="font-serif text-3xl text-brand-gold">
-                  48<span className="text-lg">h</span>
+                <p className="font-serif text-2xl text-brand-gold">
+                  48<span className="text-sm">h</span>
                 </p>
-                <p className="text-[10px] text-brand-cream/25 tracking-[0.2em] uppercase mt-1">
+                <p className="text-[10px] text-brand-cream/20 tracking-[0.2em] uppercase mt-1">
                   Freshness
                 </p>
               </div>
-              <div className="w-px h-8 bg-brand-cream/8" />
+              <div className="w-px h-7 bg-brand-cream/8" />
               <div>
-                <p className="font-serif text-3xl text-brand-gold">Direct</p>
-                <p className="text-[10px] text-brand-cream/25 tracking-[0.2em] uppercase mt-1">
+                <p className="font-serif text-2xl text-brand-gold">Direct</p>
+                <p className="text-[10px] text-brand-cream/20 tracking-[0.2em] uppercase mt-1">
                   Trade
-                </p>
-              </div>
-            </div>
-          </AnimateOnScroll>
-
-          {/* Right: Large photo (7 cols) */}
-          <AnimateOnScroll
-            animation="slide-right"
-            className="lg:col-span-7"
-          >
-            <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] rounded-lg overflow-hidden group">
-              <Image
-                src="/images/farm-field.jpg"
-                alt="コロンビアの高地コーヒー農園"
-                fill
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-[1.2s]"
-                sizes="(max-width: 1024px) 100vw, 58vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-green/50 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                <p className="text-[10px] text-brand-gold/60 tracking-[0.25em] uppercase mb-1">
-                  Altitude 1,700m
-                </p>
-                <p className="font-serif text-lg sm:text-xl text-brand-cream/80">
-                  Manzanares, Caldas. Colombia
                 </p>
               </div>
             </div>
           </AnimateOnScroll>
         </div>
 
-        {/* ─── Bottom row: Two photos ─── */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-4">
-          <AnimateOnScroll delay={1} className="relative aspect-[3/2] rounded-lg overflow-hidden group">
+        {/* ─── Photo strip: 3 photos in one row ─── */}
+        <div className="grid grid-cols-12 gap-2 sm:gap-3">
+          <AnimateOnScroll delay={1} className="col-span-6 relative aspect-[3/2] rounded-lg overflow-hidden group">
+            <Image
+              src="/images/farm-field.jpg"
+              alt="コロンビアの高地コーヒー農園"
+              fill
+              className="object-cover group-hover:scale-[1.02] transition-transform duration-[1.2s]"
+              sizes="50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-green/40 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+              <p className="font-serif text-sm sm:text-base text-brand-cream/80">
+                Manzanares, Caldas
+              </p>
+            </div>
+          </AnimateOnScroll>
+
+          <AnimateOnScroll delay={2} className="col-span-3 relative aspect-[3/4] sm:aspect-[3/2] rounded-lg overflow-hidden group">
             <Image
               src="/images/coffee-cherries.jpg"
               alt="完熟コーヒーチェリー"
               fill
               className="object-cover group-hover:scale-[1.02] transition-transform duration-[1.2s]"
-              sizes="50vw"
+              sizes="25vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-green/40 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-              <p className="text-[10px] text-brand-gold/50 tracking-[0.25em] uppercase mb-1 hidden sm:block">
+            <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
+              <p className="font-serif text-xs sm:text-sm text-brand-cream/70">
                 Hand Picked
-              </p>
-              <p className="font-serif text-sm sm:text-base text-brand-cream/70">
-                完熟チェリーだけを手摘みで
               </p>
             </div>
           </AnimateOnScroll>
 
-          <AnimateOnScroll delay={2} className="relative aspect-[3/2] rounded-lg overflow-hidden group">
+          <AnimateOnScroll delay={3} className="col-span-3 relative aspect-[3/4] sm:aspect-[3/2] rounded-lg overflow-hidden group">
             <Image
               src="/images/producer-processing.jpg"
-              alt="コーヒー生産者の精製作業"
+              alt="コーヒー生産者"
               fill
               className="object-cover group-hover:scale-[1.02] transition-transform duration-[1.2s]"
-              sizes="50vw"
+              sizes="25vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-green/40 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-              <p className="text-[10px] text-brand-gold/50 tracking-[0.25em] uppercase mb-1 hidden sm:block">
+            <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
+              <p className="font-serif text-xs sm:text-sm text-brand-cream/70">
                 Direct Trade
-              </p>
-              <p className="font-serif text-sm sm:text-base text-brand-cream/70">
-                農園から直接、あなたへ
               </p>
             </div>
           </AnimateOnScroll>
         </div>
       </div>
 
-      {/* Bottom divider */}
-      <div className="mt-24 sm:mt-32 section-divider" />
+      <div className="mt-20 sm:mt-28 section-divider" />
     </section>
   );
 }
