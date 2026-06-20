@@ -1,13 +1,27 @@
+import Image from "next/image";
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-brand-green overflow-hidden">
-      {/* Subtle background texture */}
+      {/* Background image */}
+      <Image
+        src="/images/hero-landscape.jpg"
+        alt="コロンビア マンサナレス カルダスの山岳風景"
+        fill
+        className="object-cover"
+        priority
+      />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-brand-green/75" />
+
+      {/* Subtle gold gradient */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 20% 30%, rgba(184, 150, 74, 0.08) 0%, transparent 60%),
-                              radial-gradient(circle at 80% 70%, rgba(184, 150, 74, 0.05) 0%, transparent 60%)`,
+            backgroundImage: `radial-gradient(circle at 20% 30%, rgba(184, 150, 74, 0.06) 0%, transparent 60%),
+                              radial-gradient(circle at 80% 70%, rgba(184, 150, 74, 0.04) 0%, transparent 60%)`,
           }}
         />
       </div>

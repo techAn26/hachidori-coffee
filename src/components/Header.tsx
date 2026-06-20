@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Header() {
@@ -12,7 +13,13 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <HachidoriIcon className="h-7 w-7 text-brand-gold" />
+            <Image
+              src="/images/logo.jpg"
+              alt="HACHIDORI TRADING COFFEE"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
             <span className="font-serif text-lg tracking-[0.15em] text-brand-cream">
               HACHIDORI COFFEE
             </span>
@@ -127,27 +134,5 @@ export default function Header() {
         </nav>
       )}
     </header>
-  );
-}
-
-function HachidoriIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 32 32"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M8 14c0-4 3-8 7-9 1-.3 2 0 2.5.8l3 5c.5.8.3 1.8-.4 2.4L17 16l5 2c1 .4 1.5 1.5 1 2.5l-2 4c-.5 1-1.7 1.3-2.6.7L14 22l-1 3c-.3 1-1.3 1.5-2.3 1.2C9 25.5 8 23.5 8 21v-7z" />
-      <path d="M20 13.5l6-3c.5-.3 1 .2.7.7l-2 4-4.7-1.7z" />
-      <circle cx="13" cy="10" r="1" fill="white" opacity="0.9" />
-      <path
-        d="M10 15c2-1 4-1 6 0"
-        fill="none"
-        stroke="white"
-        strokeWidth="0.5"
-        opacity="0.3"
-      />
-    </svg>
   );
 }
